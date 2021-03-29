@@ -18,7 +18,7 @@ namespace ScienceWorld.Forms
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            UserQueries.AddUser(nameTextBox.Text, surnameTextBox.Text, passwordTextBox.Text, usernameTextBox.Text, emailTextBox.Text, descriptionTextBox.Text, birthdayDateTimePicker.Value.ToString("yyyy'-'MM'-'dd"));
+            UserQueries.AddUser(nameTextBox.Text, surnameTextBox.Text, passwordTextBox.Text, usernameTextBox.Text, emailTextBox.Text, descriptionTextBox.Text, birthdayDateTimePicker.Value.ToString("yyyy'-'MM'-'dd"), townTextBox.Text);
         }
     }
 }
