@@ -13,7 +13,8 @@ namespace ScienceWorld
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-
+            SignInForm signInForm = new SignInForm();
+            signInForm.ShowDialog();
         }
 
         private void signUpButton_Click(object sender, EventArgs e)
