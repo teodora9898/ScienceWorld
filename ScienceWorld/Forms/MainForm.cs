@@ -21,5 +21,11 @@ namespace ScienceWorld.Forms
             userForm.ShowDialog();
 
         }
+
+        private void articlesButton_Click(object sender, EventArgs e)
+        {
+            ArticleForm articleForm = new ArticleForm();
+            articleForm.ShowDialog();
+        }
     }
 }
