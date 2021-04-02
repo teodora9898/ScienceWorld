@@ -33,14 +33,13 @@ namespace ScienceWorld.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.scienceFieldComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.Article = new System.Windows.Forms.RichTextBox();
             this.addArticleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(321, 139);
+            this.titleTextBox.Location = new System.Drawing.Point(321, 105);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(173, 27);
             this.titleTextBox.TabIndex = 0;
@@ -48,7 +47,7 @@ namespace ScienceWorld.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(235, 146);
+            this.label1.Location = new System.Drawing.Point(235, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 20);
             this.label1.TabIndex = 1;
@@ -71,18 +70,9 @@ namespace ScienceWorld.Forms
             this.label2.TabIndex = 4;
             this.label2.Text = "Science field:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(157, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Science subfield:";
-            // 
             // Article
             // 
-            this.Article.Location = new System.Drawing.Point(133, 192);
+            this.Article.Location = new System.Drawing.Point(143, 163);
             this.Article.Name = "Article";
             this.Article.Size = new System.Drawing.Size(401, 189);
             this.Article.TabIndex = 6;
@@ -105,7 +95,6 @@ namespace ScienceWorld.Forms
             this.ClientSize = new System.Drawing.Size(689, 450);
             this.Controls.Add(this.addArticleButton);
             this.Controls.Add(this.Article);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.scienceFieldComboBox);
             this.Controls.Add(this.label1);
@@ -124,7 +113,6 @@ namespace ScienceWorld.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox scienceFieldComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox Article;
         private System.Windows.Forms.Button addArticleButton;
     }

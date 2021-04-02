@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ScienceWorld.Entities
 {
@@ -10,7 +9,5 @@ namespace ScienceWorld.Entities
         public DateTime uploaddate { get; set; }
         public String articletext { get; set; }
         public String fieldofscience { get; set; }
-        public String subfieldofscience { get; set; }
-        public List<Comment> comments{ get; set; }
     }
 }
