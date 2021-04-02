@@ -86,6 +86,7 @@ namespace ScienceWorld.Queries
         public static List<Comment> GetAllComments()
         {
             ISession session = SessionManager.GetSession();
+         //   session.UserDefinedTypes.Define(UdtMap.For<Article>());
 
             if (session == null)
                 return null;
@@ -116,10 +117,11 @@ namespace ScienceWorld.Queries
             if (session == null)
                 return;
 
+            var dateaddedarticle =Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH:mm:ss");
             var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            RowSet comment = session.Execute("insert into \"Comment\" (username, text, dateadded)  values " +
-                "('" + Global.ActiveUser.username + "', '" + text + "', '" + dateadded + "')");
-            //todo Teodora dodaj jos jedan  insert u listu komentara za taj article
+            RowSet comment = session.Execute("insert into \"Comment\" (username, text, dateadded, usernameforarticle, uploaddatearticle)  values " +
+                "('" + Global.ActiveUser.username + "', '" + text + "', '" + dateadded + "','"+Global.GlobalArticle.username+"','"+ dateaddedarticle + "')");
+            
         }
         //RADI
         public static void UpdateComment(string dateadded, string text)
