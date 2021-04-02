@@ -37,6 +37,7 @@ namespace ScienceWorld.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.createrComboBox = new System.Windows.Forms.ComboBox();
             this.showArticleButton = new System.Windows.Forms.Button();
+            this.articleCommentsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // otherArticlesListBox
@@ -111,11 +112,22 @@ namespace ScienceWorld.Forms
             this.showArticleButton.UseVisualStyleBackColor = true;
             this.showArticleButton.Click += new System.EventHandler(this.showArticleButton_Click);
             // 
+            // articleCommentsButton
+            // 
+            this.articleCommentsButton.Location = new System.Drawing.Point(254, 343);
+            this.articleCommentsButton.Name = "articleCommentsButton";
+            this.articleCommentsButton.Size = new System.Drawing.Size(134, 29);
+            this.articleCommentsButton.TabIndex = 8;
+            this.articleCommentsButton.Text = "Show comments";
+            this.articleCommentsButton.UseVisualStyleBackColor = true;
+            this.articleCommentsButton.Click += new System.EventHandler(this.articleCommentsButton_Click);
+            // 
             // OtherArticlesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.articleCommentsButton);
             this.Controls.Add(this.showArticleButton);
             this.Controls.Add(this.createrComboBox);
             this.Controls.Add(this.label3);
@@ -142,5 +154,6 @@ namespace ScienceWorld.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox createrComboBox;
         private System.Windows.Forms.Button showArticleButton;
+        private System.Windows.Forms.Button articleCommentsButton;
     }
 }

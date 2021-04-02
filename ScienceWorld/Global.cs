@@ -14,5 +14,12 @@ namespace ScienceWorld
             get { return activeUser; }
             set { activeUser = value; }
         }
+
+        private static Article globalArticle;
+        public static Article GlobalArticle
+        {
+            get { return globalArticle; }
+            set { globalArticle = value; }
+        }
     }
 }

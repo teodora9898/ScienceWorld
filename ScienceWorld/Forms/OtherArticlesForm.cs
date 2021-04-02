@@ -49,5 +49,21 @@ namespace ScienceWorld.Forms
                 otherArticlesListBox.Items.Add(art.articletext);
             }
         }
+
+        private void articleCommentsButton_Click(object sender, EventArgs e)
+        {
+            if (otherArticlesListBox.SelectedIndex > -1)
+            {
+                var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString(), titleComboBox.SelectedItem.ToString());
+                var art = articles[otherArticlesListBox.SelectedIndex];
+                Global.GlobalArticle = art;
+                CommentForm commentForm = new CommentForm();
+                commentForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You have to choose an article you want to show comments for!");
+            }
+        }
     }
 }

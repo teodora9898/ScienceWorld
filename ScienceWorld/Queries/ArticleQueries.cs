@@ -59,7 +59,6 @@ namespace ScienceWorld.Queries
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
                 //article.subfieldofscience = art["subfieldofscience"] != null ? art["subfieldofscience"].ToString() : string.Empty;
-                article.comments = art["comments"] != null ? (List<Comment>)art["comments"] : null;   //?????????????????
 
                 articles.Add(article);
             }
@@ -83,7 +82,6 @@ namespace ScienceWorld.Queries
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
                 //article.subfieldofscience = art["subfieldofscience"] != null ? art["subfieldofscience"].ToString() : string.Empty;
-                article.comments = art["comments"] != null ? (List<Comment>)art["comments"] : null;   //?????????????????
 
                 articles.Add(article);
             }
@@ -117,7 +115,6 @@ namespace ScienceWorld.Queries
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
                 //article.subfieldofscience = art["subfieldofscience"] != null ? art["subfieldofscience"].ToString() : string.Empty;
-                article.comments = art["comments"] != null ? (List<Comment>)art["comments"] : null;   //?????????????????
 
                 articles.Add(article);
             }
