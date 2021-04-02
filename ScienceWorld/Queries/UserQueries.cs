@@ -58,15 +58,16 @@ namespace ScienceWorld.Queries
                 "and password='"+password+"'").FirstOrDefault();
             if (user != null)
             {
-                User userEntity = new User();
-
-                userEntity.name = user["firstname"] != null ? user["firstname"].ToString() : string.Empty;
-                userEntity.surname = user["lastname"] != null ? user["lastname"].ToString() : string.Empty;
-                userEntity.email = user["email"] != null ? user["email"].ToString() : string.Empty;
-                userEntity.username = user["username"] != null ? user["username"].ToString() : string.Empty;
-                userEntity.password = user["password"] != null ? user["password"].ToString() : string.Empty;
-                userEntity.description = user["description"] != null ? user["description"].ToString() : string.Empty;
-                userEntity.town = user["town"] != null ? user["town"].ToString() : string.Empty;
+                User userEntity = new User
+                {
+                    name = user["firstname"] != null ? user["firstname"].ToString() : string.Empty,
+                    surname = user["lastname"] != null ? user["lastname"].ToString() : string.Empty,
+                    email = user["email"] != null ? user["email"].ToString() : string.Empty,
+                    username = user["username"] != null ? user["username"].ToString() : string.Empty,
+                    password = user["password"] != null ? user["password"].ToString() : string.Empty,
+                    description = user["description"] != null ? user["description"].ToString() : string.Empty,
+                    town = user["town"] != null ? user["town"].ToString() : string.Empty
+                };
                 // userEntity.birthday = user["birthday"] != null ? user["birthday"] : string.Empty;
                 string birthday = user["birthday"].ToString();
                 userEntity.birthday = DateTime.Parse(birthday);
@@ -77,7 +78,7 @@ namespace ScienceWorld.Queries
             return null;
 
         }
-
+        //todo Teodora : probaj preko batch?
         public static void UpdatePassword(string newPassword)
         {
             /*ISession session = SessionManager.GetSession();

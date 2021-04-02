@@ -90,6 +90,7 @@
             this.addCommentButton.TabIndex = 5;
             this.addCommentButton.Text = "Add comment";
             this.addCommentButton.UseVisualStyleBackColor = true;
+            this.addCommentButton.Click += new System.EventHandler(this.addCommentButton_Click);
             // 
             // updateCommentButton
             // 
@@ -99,6 +100,7 @@
             this.updateCommentButton.TabIndex = 6;
             this.updateCommentButton.Text = "Update comment";
             this.updateCommentButton.UseVisualStyleBackColor = true;
+            this.updateCommentButton.Click += new System.EventHandler(this.updateCommentButton_Click);
             // 
             // CommentForm
             // 
@@ -114,6 +116,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CommentForm";
             this.Text = "CommentForm";
+            this.Load += new System.EventHandler(this.CommentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

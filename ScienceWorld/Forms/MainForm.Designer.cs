@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.UserFormButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.commentsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UserFormButton
@@ -42,21 +42,22 @@
             this.UserFormButton.UseVisualStyleBackColor = true;
             this.UserFormButton.Click += new System.EventHandler(this.UserFormButton_Click);
             // 
-            // button1
+            // commentsButton
             // 
-            this.button1.Location = new System.Drawing.Point(65, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.commentsButton.Location = new System.Drawing.Point(65, 137);
+            this.commentsButton.Name = "commentsButton";
+            this.commentsButton.Size = new System.Drawing.Size(108, 38);
+            this.commentsButton.TabIndex = 1;
+            this.commentsButton.Text = "Comments";
+            this.commentsButton.UseVisualStyleBackColor = true;
+            this.commentsButton.Click += new System.EventHandler(this.commentsButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 314);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.commentsButton);
             this.Controls.Add(this.UserFormButton);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -67,6 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Button UserFormButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button commentsButton;
     }
 }

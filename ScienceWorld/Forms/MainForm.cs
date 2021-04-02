@@ -21,5 +21,11 @@ namespace ScienceWorld.Forms
             userForm.ShowDialog();
 
         }
+
+        private void commentsButton_Click(object sender, EventArgs e)
+        {
+            CommentForm commentForm = new CommentForm();
+            commentForm.ShowDialog();
+        }
     }
 }
