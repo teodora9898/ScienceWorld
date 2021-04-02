@@ -44,6 +44,7 @@ namespace ScienceWorld.Forms
             this.myArticlesButton.TabIndex = 0;
             this.myArticlesButton.Text = "My articles";
             this.myArticlesButton.UseVisualStyleBackColor = true;
+            this.myArticlesButton.Click += new System.EventHandler(this.myArticlesButton_Click);
             // 
             // Articles
             // 
@@ -62,6 +63,7 @@ namespace ScienceWorld.Forms
             this.addArticleButton.TabIndex = 2;
             this.addArticleButton.Text = "Add article";
             this.addArticleButton.UseVisualStyleBackColor = true;
+            this.addArticleButton.Click += new System.EventHandler(this.addArticleButton_Click);
             // 
             // deleteArticleButton
             // 
