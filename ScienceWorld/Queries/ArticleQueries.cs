@@ -55,10 +55,9 @@ namespace ScienceWorld.Queries
                 Article article = new Article();
                 article.title = art["title"] != null ? art["title"].ToString() : string.Empty;
                 article.username = art["username"] != null ? art["username"].ToString() : string.Empty;
-                //article.uploaddate = art["uploaddate"] != null ? (DateTime)art["uploaddate"] : DateTime.MinValue; //Da li je tacno??
+                article.uploaddate = DateTime.Parse(art["dateadded"].ToString());
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
-                //article.subfieldofscience = art["subfieldofscience"] != null ? art["subfieldofscience"].ToString() : string.Empty;
 
                 articles.Add(article);
             }
@@ -78,10 +77,9 @@ namespace ScienceWorld.Queries
                 Article article = new Article();
                 article.title = art["title"] != null ? art["title"].ToString() : string.Empty;
                 article.username = art["username"] != null ? art["username"].ToString() : string.Empty;
-                //article.uploaddate = art["uploaddate"] != null ? (DateTime)art["uploaddate"] : DateTime.MinValue; //Da li je tacno??
+                article.uploaddate = DateTime.Parse(art["dateadded"].ToString());
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
-                //article.subfieldofscience = art["subfieldofscience"] != null ? art["subfieldofscience"].ToString() : string.Empty;
 
                 articles.Add(article);
             }
@@ -111,10 +109,9 @@ namespace ScienceWorld.Queries
                 Article article = new Article();
                 article.title = art["title"] != null ? art["title"].ToString() : string.Empty;
                 article.username = art["username"] != null ? art["username"].ToString() : string.Empty;
-                //article.uploaddate = art["uploaddate"] != null ? (DateTime)art["uploaddate"] : DateTime.MinValue; //Da li je tacno??
+                article.uploaddate = DateTime.Parse(art["dateadded"].ToString());
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
-                //article.subfieldofscience = art["subfieldofscience"] != null ? art["subfieldofscience"].ToString() : string.Empty;
 
                 articles.Add(article);
             }
