@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.UserFormButton = new System.Windows.Forms.Button();
-            this.commentsButton = new System.Windows.Forms.Button();
+            this.articlesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UserFormButton
@@ -42,22 +42,22 @@
             this.UserFormButton.UseVisualStyleBackColor = true;
             this.UserFormButton.Click += new System.EventHandler(this.UserFormButton_Click);
             // 
-            // commentsButton
+            // articlesButton
             // 
-            this.commentsButton.Location = new System.Drawing.Point(65, 137);
-            this.commentsButton.Name = "commentsButton";
-            this.commentsButton.Size = new System.Drawing.Size(108, 38);
-            this.commentsButton.TabIndex = 1;
-            this.commentsButton.Text = "Comments";
-            this.commentsButton.UseVisualStyleBackColor = true;
-            this.commentsButton.Click += new System.EventHandler(this.commentsButton_Click);
+            this.articlesButton.Location = new System.Drawing.Point(65, 135);
+            this.articlesButton.Name = "articlesButton";
+            this.articlesButton.Size = new System.Drawing.Size(108, 39);
+            this.articlesButton.TabIndex = 1;
+            this.articlesButton.Text = "Articles";
+            this.articlesButton.UseVisualStyleBackColor = true;
+            this.articlesButton.Click += new System.EventHandler(this.articlesButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 314);
-            this.Controls.Add(this.commentsButton);
+            this.Controls.Add(this.articlesButton);
             this.Controls.Add(this.UserFormButton);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -68,6 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Button UserFormButton;
-        private System.Windows.Forms.Button commentsButton;
+        private System.Windows.Forms.Button articlesButton;
     }
 }

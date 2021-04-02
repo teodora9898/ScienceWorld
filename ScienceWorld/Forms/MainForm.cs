@@ -22,10 +22,10 @@ namespace ScienceWorld.Forms
 
         }
 
-        private void commentsButton_Click(object sender, EventArgs e)
+        private void articlesButton_Click(object sender, EventArgs e)
         {
-            CommentForm commentForm = new CommentForm();
-            commentForm.ShowDialog();
+            ArticleForm articleForm = new ArticleForm();
+            articleForm.ShowDialog();
         }
     }
 }
