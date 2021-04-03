@@ -16,46 +16,12 @@ namespace ScienceWorld.Queries
 
             if (session == null)
                 return;
-
+//************************
             var isDeleted = session.Execute("delete from \"Comment\" where username = '" + Global.ActiveUser.username +
-                "' and dateadded = '" + dateadded + "'");
+                "' and dateadded = '" + dateadded + "' and usernameforarticle ='"+Global.GlobalArticle.username+"'");
 
 
         }
-        //public static Comment GetCommentByTextAndUsername(string text)
-        //{
-
-        //    ISession session = SessionManager.GetSession();
-
-        //    if (session == null)
-        //        return null;
-
-        //    var comment = session.Execute("select * from \"Comment\" where username='" + Global.ActiveUser.username + "'" +
-        //     "and text='" + text + "'").FirstOrDefault();
-
-        //    if (comment != null)
-        //    {
-        //        Comment commentEntity = new Comment();
-
-        //        commentEntity.text = comment["text"] != null ? comment["text"].ToString() : string.Empty;
-        //        commentEntity.username = comment["username"] != null ? comment["username"].ToString() : string.Empty;
-        //        // commentEntity.dateadded = comment["dateadded"] != null ? DateTime.Parse(comment["dateadded"].ToString()) : null;
-        //        //todo Teodora : Kako da izbegnes if else i da ovo napises preko tern operatora
-        //        if (comment["dateadded"] != null)
-        //        {
-        //            string dateadded = comment["dateadded"].ToString();
-        //            commentEntity.dateadded = DateTime.Parse(dateadded);
-        //        }
-        //        else
-        //        {
-        //            commentEntity.dateadded = null;
-        //        }
-        //        return commentEntity;
-        //    }
-
-        //    return null;
-        //}
-        //RADI
         public static Comment GetCommentByDateAndUsername(string text, string dateadded)
         {
 
@@ -65,7 +31,7 @@ namespace ScienceWorld.Queries
                 return null;
 
             var comment = session.Execute("select * from \"Comment\" where username='" + Global.ActiveUser.username + "'" +
-             "and dateadded='" + dateadded + "'").FirstOrDefault();
+             "and dateadded='" + dateadded + "' and usernameforarticle='"+Global.GlobalArticle.username+"'").FirstOrDefault();
 
             if (comment != null)
             {
@@ -91,8 +57,9 @@ namespace ScienceWorld.Queries
             if (session == null)
                 return null;
 
+            var dateaddedarticle = Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH:mm:ss");
             //todo Teodora : ovde mora da se uze u obzir i Article na koji se odnosi
-            var comments = session.Execute("select * from \"Comment\"");
+            var comments = session.Execute("select * from \"Comment\" where usernameforarticle='"+Global.GlobalArticle.username+"' and uploaddatearticle = '"+ dateaddedarticle + "'");
             var allComments = new List<Comment>();
 
             foreach (var comment in comments)
@@ -134,7 +101,8 @@ namespace ScienceWorld.Queries
             var comment = session.Execute("update \"Comment\" " +
                           "set text = '" + text + "'" +
                           "where username='" + Global.ActiveUser.username + "'" +
-                          "and dateadded='" + dateadded + "'");
+                          "and dateadded='" + dateadded + "'" +
+                          "and usernameforarticle='"+Global.GlobalArticle.username+"'");
 
         }
 

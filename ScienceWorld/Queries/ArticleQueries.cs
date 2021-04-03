@@ -55,7 +55,7 @@ namespace ScienceWorld.Queries
                 Article article = new Article();
                 article.title = art["title"] != null ? art["title"].ToString() : string.Empty;
                 article.username = art["username"] != null ? art["username"].ToString() : string.Empty;
-                article.uploaddate = DateTime.Parse(art["dateadded"].ToString());
+                article.uploaddate = DateTime.Parse(art["uploaddate"].ToString());
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
 
@@ -77,7 +77,7 @@ namespace ScienceWorld.Queries
                 Article article = new Article();
                 article.title = art["title"] != null ? art["title"].ToString() : string.Empty;
                 article.username = art["username"] != null ? art["username"].ToString() : string.Empty;
-                article.uploaddate = DateTime.Parse(art["dateadded"].ToString());
+                article.uploaddate = DateTime.Parse(art["uploaddate"].ToString());
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
 
@@ -109,7 +109,7 @@ namespace ScienceWorld.Queries
                 Article article = new Article();
                 article.title = art["title"] != null ? art["title"].ToString() : string.Empty;
                 article.username = art["username"] != null ? art["username"].ToString() : string.Empty;
-                article.uploaddate = DateTime.Parse(art["dateadded"].ToString());
+                article.uploaddate = DateTime.Parse(art["uploaddate"].ToString());
                 article.articletext = art["articletext"] != null ? art["articletext"].ToString() : string.Empty;
                 article.fieldofscience = art["fieldofscience"] != null ? art["fieldofscience"].ToString() : string.Empty;
 

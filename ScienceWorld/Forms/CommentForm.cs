@@ -16,7 +16,6 @@ namespace ScienceWorld.Forms
             InitializeComponent();
         }
 
-        //todo Teodora proveri ovu funckiju napisana je intuitivno
         private void deleteCommentButton_Click(object sender, EventArgs e)
         {
             if (allCommentsListBox.SelectedIndex == -1)
@@ -34,9 +33,16 @@ namespace ScienceWorld.Forms
                 }
                 var dateadded = comment.dateadded.ToString("yyyy-MM-dd HH:mm:ss");
                 CommentQueries.DeleteComment(dateadded);
-                if (CommentQueries.GetCommentByDateAndUsername(allCommentsListBox.SelectedItem.ToString(), dateadded) != null)
+                if (CommentQueries.GetCommentByDateAndUsername(allCommentsListBox.SelectedItem.ToString(), dateadded) == null)
                 {
                     MessageBox.Show("You have successfully deleted comment!");
+                    allCommentsListBox.Items.Clear();
+
+                    var commentsList = CommentQueries.GetAllComments();
+                    foreach (var item in commentsList)
+                    {
+                        allCommentsListBox.Items.Add(item.text);
+                    }
                 }
                 
             }
@@ -49,8 +55,17 @@ namespace ScienceWorld.Forms
             {
                 MessageBox.Show("Please write your comment in textbox!"); 
             }
-            CommentQueries.AddCommentForArticle(myCommentTextBox.Text);
-            //todo Tea u taj article dodaj ovaj komentar u listu a zatim ucitaj u listbox sve komentare zajedno sa novim
+            else
+            {
+                allCommentsListBox.Items.Clear();
+
+                CommentQueries.AddCommentForArticle(myCommentTextBox.Text);
+                var comments = CommentQueries.GetAllComments();
+                foreach (var item in comments)
+                {
+                    allCommentsListBox.Items.Add(item.text);
+                }
+            }
         }
 
         private void updateCommentButton_Click(object sender, EventArgs e)
@@ -71,11 +86,15 @@ namespace ScienceWorld.Forms
             }
             else
             {
+                allCommentsListBox.Items.Clear();
                 var comment = comments[index];
                 var dateadded = comment.dateadded.ToString("yyyy-MM-dd HH:mm:ss");
-              //  var dateadded = DateTime.Parse(comment.dateadded)
                 CommentQueries.UpdateComment(dateadded, myCommentTextBox.Text.ToString());
-              //  CommentQueries.GetCommentByDateAndUsername(Global.ActiveUser.username, newDate);
+                var commentsList = CommentQueries.GetAllComments();
+                foreach (var item in commentsList)
+                {
+                    allCommentsListBox.Items.Add(item.text);
+                }
             }
         }
 
