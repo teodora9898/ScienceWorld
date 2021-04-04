@@ -3,6 +3,7 @@ using ScienceWorld.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ScienceWorld.Queries
 {
@@ -40,6 +41,7 @@ namespace ScienceWorld.Queries
                 return;
             var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
             RowSet articleData = session.Execute("insert into article (username, title, uploaddate, articletext, fieldofscience) values ('" + Global.ActiveUser.username + "', '" + title + "', '" + dateadded + "', '" + articletext  + "' ,'" + fieldofscience +"')");
+            MessageBox.Show("You successfully added article!");
         }
         public static List<Article> GetArticleByScienceField(string username, string field)
         {

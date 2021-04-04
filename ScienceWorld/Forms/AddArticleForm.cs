@@ -14,7 +14,6 @@ namespace ScienceWorld.Forms
         private void addArticleButton_Click(object sender, EventArgs e)
         {
             Queries.ArticleQueries.AddArticle(titleTextBox.Text, scienceFieldComboBox.SelectedItem.ToString(), Article.Text);
-            MessageBox.Show("You successfully added article!");
         }
 
         private void AddArticleForm_Load(object sender, EventArgs e)

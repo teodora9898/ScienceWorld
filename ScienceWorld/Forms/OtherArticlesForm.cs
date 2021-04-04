@@ -27,7 +27,10 @@ namespace ScienceWorld.Forms
             var articles = ArticleQueries.GetArticleByOnlyScienceField(fieldComboBox.SelectedItem.ToString());
             foreach (Article art in articles)
             {
-                createrComboBox.Items.Add(art.username);
+                if (!createrComboBox.Items.Contains(art.username))
+                {
+                    createrComboBox.Items.Add(art.username);
+                }
             }
         }
 
@@ -37,7 +40,7 @@ namespace ScienceWorld.Forms
             var articles = ArticleQueries.GetArticleByScienceField(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString());
             foreach(Article art in articles)
             {
-                titleComboBox.Items.Add(art.title);
+                    titleComboBox.Items.Add(art.title);
             }
         }
 
