@@ -31,7 +31,7 @@ namespace ScienceWorld.Forms
                 {
                     MessageBox.Show("You can not delete comment which you did not post!");
                 }
-                var dateadded = comment.dateadded.ToString("yyyy-MM-dd HH:mm:ss");
+                var dateadded = comment.dateadded.ToString("yyyy-MM-dd HH':'mm':'ss");
                 CommentQueries.DeleteComment(dateadded);
                 if (CommentQueries.GetCommentByDateAndUsername(allCommentsListBox.SelectedItem.ToString(), dateadded) == null)
                 {
@@ -88,7 +88,7 @@ namespace ScienceWorld.Forms
             {
                 allCommentsListBox.Items.Clear();
                 var comment = comments[index];
-                var dateadded = comment.dateadded.ToString("yyyy-MM-dd HH:mm:ss");
+                var dateadded = comment.dateadded.ToString("yyyy-MM-dd HH':'mm':'ss");
                 CommentQueries.UpdateComment(dateadded, myCommentTextBox.Text.ToString());
                 var commentsList = CommentQueries.GetAllComments();
                 foreach (var item in commentsList)

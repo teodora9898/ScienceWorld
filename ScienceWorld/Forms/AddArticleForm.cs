@@ -13,7 +13,7 @@ namespace ScienceWorld.Forms
 
         private void addArticleButton_Click(object sender, EventArgs e)
         {
-            Queries.ArticleQueries.AddArticle(titleTextBox.Text, scienceFieldComboBox.SelectedItem.ToString(), Article.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Queries.ArticleQueries.AddArticle(titleTextBox.Text, scienceFieldComboBox.SelectedItem.ToString(), Article.Text);
         }
 
         private void AddArticleForm_Load(object sender, EventArgs e)

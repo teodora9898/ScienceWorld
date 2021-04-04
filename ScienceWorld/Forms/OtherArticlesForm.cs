@@ -27,7 +27,10 @@ namespace ScienceWorld.Forms
             var articles = ArticleQueries.GetArticleByOnlyScienceField(fieldComboBox.SelectedItem.ToString());
             foreach (Article art in articles)
             {
-                createrComboBox.Items.Add(art.username);
+                if (!createrComboBox.Items.Contains(art.username))
+                {
+                    createrComboBox.Items.Add(art.username);
+                }
             }
         }
 
@@ -37,16 +40,23 @@ namespace ScienceWorld.Forms
             var articles = ArticleQueries.GetArticleByScienceField(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString());
             foreach(Article art in articles)
             {
-                titleComboBox.Items.Add(art.title);
+                    titleComboBox.Items.Add(art.title);
             }
         }
 
         private void showArticleButton_Click(object sender, EventArgs e)
         {
-            var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString(), titleComboBox.SelectedItem.ToString());
-            foreach (Article art in articles)
+            if (titleComboBox.SelectedIndex > -1)
             {
-                otherArticlesListBox.Items.Add(art.articletext);
+                var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString(), titleComboBox.SelectedItem.ToString());
+                foreach (Article art in articles)
+                {
+                    otherArticlesListBox.Items.Add(art.articletext);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have to choose science field, creator and title!");
             }
         }
 
@@ -64,6 +74,11 @@ namespace ScienceWorld.Forms
             {
                 MessageBox.Show("You have to choose an article you want to show comments for!");
             }
+        }
+
+        private void bookmarkButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
