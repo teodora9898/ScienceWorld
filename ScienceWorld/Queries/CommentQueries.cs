@@ -85,7 +85,7 @@ namespace ScienceWorld.Queries
                 return;
 
             var dateaddedarticle =Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH:mm:ss");
-            var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
             RowSet comment = session.Execute("insert into \"Comment\" (username, text, dateadded, usernameforarticle, uploaddatearticle)  values " +
                 "('" + Global.ActiveUser.username + "', '" + text + "', '" + dateadded + "','"+Global.GlobalArticle.username+"','"+ dateaddedarticle + "')");
             
