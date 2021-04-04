@@ -32,14 +32,14 @@ namespace ScienceWorld.Queries
             }
             return articles;
         }*/
-        public static void AddArticle(string title, string fieldofscience, string articletext, string datetime)
+        public static void AddArticle(string title, string fieldofscience, string articletext)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
-
-            RowSet articleData = session.Execute("insert into \"article\"(username, title, uploaddate, articletext, fieldofscience) values ('" + Global.ActiveUser.username + "', '" + title + "', '" + datetime + "', '" + articletext  + "' ,'" + fieldofscience +"')");
+            var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
+            RowSet articleData = session.Execute("insert into article (username, title, uploaddate, articletext, fieldofscience) values ('" + Global.ActiveUser.username + "', '" + title + "', '" + dateadded + "', '" + articletext  + "' ,'" + fieldofscience +"')");
         }
         public static List<Article> GetArticleByScienceField(string username, string field)
         {

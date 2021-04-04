@@ -43,10 +43,17 @@ namespace ScienceWorld.Forms
 
         private void showArticleButton_Click(object sender, EventArgs e)
         {
-            var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString(), titleComboBox.SelectedItem.ToString());
-            foreach (Article art in articles)
+            if (titleComboBox.SelectedIndex > -1)
             {
-                otherArticlesListBox.Items.Add(art.articletext);
+                var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString(), titleComboBox.SelectedItem.ToString());
+                foreach (Article art in articles)
+                {
+                    otherArticlesListBox.Items.Add(art.articletext);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have to choose science field, creator and title!");
             }
         }
 
@@ -64,6 +71,11 @@ namespace ScienceWorld.Forms
             {
                 MessageBox.Show("You have to choose an article you want to show comments for!");
             }
+        }
+
+        private void bookmarkButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

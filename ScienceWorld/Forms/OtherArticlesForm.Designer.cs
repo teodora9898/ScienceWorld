@@ -38,6 +38,8 @@ namespace ScienceWorld.Forms
             this.createrComboBox = new System.Windows.Forms.ComboBox();
             this.showArticleButton = new System.Windows.Forms.Button();
             this.articleCommentsButton = new System.Windows.Forms.Button();
+            this.bookmarkButton = new System.Windows.Forms.Button();
+            this.myBookmarksBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // otherArticlesListBox
@@ -122,11 +124,32 @@ namespace ScienceWorld.Forms
             this.articleCommentsButton.UseVisualStyleBackColor = true;
             this.articleCommentsButton.Click += new System.EventHandler(this.articleCommentsButton_Click);
             // 
+            // bookmarkButton
+            // 
+            this.bookmarkButton.Location = new System.Drawing.Point(426, 343);
+            this.bookmarkButton.Name = "bookmarkButton";
+            this.bookmarkButton.Size = new System.Drawing.Size(105, 29);
+            this.bookmarkButton.TabIndex = 9;
+            this.bookmarkButton.Text = "Bookmark";
+            this.bookmarkButton.UseVisualStyleBackColor = true;
+            this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click);
+            // 
+            // myBookmarksBtn
+            // 
+            this.myBookmarksBtn.Location = new System.Drawing.Point(576, 343);
+            this.myBookmarksBtn.Name = "myBookmarksBtn";
+            this.myBookmarksBtn.Size = new System.Drawing.Size(130, 29);
+            this.myBookmarksBtn.TabIndex = 10;
+            this.myBookmarksBtn.Text = "My bookmarks";
+            this.myBookmarksBtn.UseVisualStyleBackColor = true;
+            // 
             // OtherArticlesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.myBookmarksBtn);
+            this.Controls.Add(this.bookmarkButton);
             this.Controls.Add(this.articleCommentsButton);
             this.Controls.Add(this.showArticleButton);
             this.Controls.Add(this.createrComboBox);
@@ -155,5 +178,7 @@ namespace ScienceWorld.Forms
         private System.Windows.Forms.ComboBox createrComboBox;
         private System.Windows.Forms.Button showArticleButton;
         private System.Windows.Forms.Button articleCommentsButton;
+        private System.Windows.Forms.Button bookmarkButton;
+        private System.Windows.Forms.Button myBookmarksBtn;
     }
 }

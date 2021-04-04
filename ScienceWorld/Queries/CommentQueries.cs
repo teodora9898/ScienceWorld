@@ -57,7 +57,7 @@ namespace ScienceWorld.Queries
             if (session == null)
                 return null;
 
-            var dateaddedarticle = Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH:mm:ss");
+            var dateaddedarticle = Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH':'mm':'ss");
             //todo Teodora : ovde mora da se uze u obzir i Article na koji se odnosi
             var comments = session.Execute("select * from \"Comment\" where usernameforarticle='"+Global.GlobalArticle.username+"' and uploaddatearticle = '"+ dateaddedarticle + "'");
             var allComments = new List<Comment>();
@@ -84,8 +84,8 @@ namespace ScienceWorld.Queries
             if (session == null)
                 return;
 
-            var dateaddedarticle =Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH:mm:ss");
-            var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            var dateaddedarticle =Global.GlobalArticle.uploaddate.ToString("yyyy-MM-dd HH':'mm':'ss");
+            var dateadded = DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
             RowSet comment = session.Execute("insert into \"Comment\" (username, text, dateadded, usernameforarticle, uploaddatearticle)  values " +
                 "('" + Global.ActiveUser.username + "', '" + text + "', '" + dateadded + "','"+Global.GlobalArticle.username+"','"+ dateaddedarticle + "')");
             
