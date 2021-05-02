@@ -22,6 +22,7 @@ namespace ScienceWorld.Forms
         {
             if (articleTitleComboBox != null)
             {
+                Articles.Items.Clear();
                 var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(Global.ActiveUser.username, fieldOfScienceComboBox.SelectedItem.ToString(), articleTitleComboBox.SelectedItem.ToString());
                 foreach (Article art in articles)
                 {
@@ -64,6 +65,7 @@ namespace ScienceWorld.Forms
 
         private void fieldOfScienceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            articleTitleComboBox.Items.Clear();
             articleTitleComboBox.Items.Clear();
             var articles = ArticleQueries.GetArticleByScienceField(Global.ActiveUser.username, fieldOfScienceComboBox.SelectedItem.ToString());
             foreach (Article art in articles)

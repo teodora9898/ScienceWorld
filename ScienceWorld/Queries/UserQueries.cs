@@ -2,6 +2,7 @@
 using ScienceWorld.Entities;
 using System;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ScienceWorld.Queries
 {
@@ -83,19 +84,21 @@ namespace ScienceWorld.Queries
         {
             ISession session = SessionManager.GetSession();
 
-            if (session == null)
-                return;
+            if (session == null) 
+            return;
 
             var activeUser = Global.ActiveUser;
+
+            var birthday = activeUser.birthday.Date.ToString("yyyy-MM-dd");
 
             session.Execute("delete from \"User\" where username = '" + Global.ActiveUser.username + "'and password ='" + Global.ActiveUser.password + "'");
             RowSet userData = session.Execute("insert into \"User\" (username, password, firstname, lastname," +
                " email, description, birthday, town)  values " +
                "('" + activeUser.username + "', '" + newPassword + "', '" + activeUser.name + "', '"
-               + activeUser.surname + "', '" + activeUser.email + "', '" + activeUser.description + "', '" + activeUser.birthday + "', '" + activeUser.town + "')");
-
+               + activeUser.surname + "', '" + activeUser.email + "', '" + activeUser.description + "', '" +  birthday + "', '" + activeUser.town + "')");
+            
             activeUser.password = newPassword;
-
+            MessageBox.Show("Password successfully updated!");
         }
 
         public static void DeleteUsersAccount()

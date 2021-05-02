@@ -1,10 +1,5 @@
 ﻿using ScienceWorld.Queries;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 
@@ -27,8 +22,7 @@ namespace ScienceWorld.Forms
             {
                 UserQueries.AddUser(nameTextBox.Text, surnameTextBox.Text, passwordTextBox.Text, usernameTextBox.Text, emailTextBox.Text, descriptionTextBox.Text, birthdayDateTimePicker.Value.ToString("yyyy'-'MM'-'dd"), townTextBox.Text);
                 MessageBox.Show("You have successfully signed up! Please sign in now!");
-                
             }
-        } 
+        }
     }
 }

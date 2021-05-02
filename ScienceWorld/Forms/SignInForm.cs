@@ -1,10 +1,5 @@
 ﻿using ScienceWorld.Queries;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ScienceWorld.Forms
@@ -19,7 +14,7 @@ namespace ScienceWorld.Forms
         private void signInBtn_Click(object sender, EventArgs e)
         {
             var user = UserQueries.GetUserByUsernameAndPassword(usernameSignInTextBox.Text, passwordSignInTextBox.Text);
-            if (user==null)
+            if (user == null)
             {
                 MessageBox.Show("Username or password is incorrect! Please try again!");
             }

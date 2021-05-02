@@ -44,9 +44,9 @@ namespace ScienceWorld.Forms
             // 
             this.myArticlesButton.Location = new System.Drawing.Point(66, 358);
             this.myArticlesButton.Name = "myArticlesButton";
-            this.myArticlesButton.Size = new System.Drawing.Size(114, 46);
+            this.myArticlesButton.Size = new System.Drawing.Size(114, 54);
             this.myArticlesButton.TabIndex = 0;
-            this.myArticlesButton.Text = "My articles";
+            this.myArticlesButton.Text = "Show my articles";
             this.myArticlesButton.UseVisualStyleBackColor = true;
             this.myArticlesButton.Click += new System.EventHandler(this.myArticlesButton_Click);
             // 
@@ -63,7 +63,7 @@ namespace ScienceWorld.Forms
             // 
             this.addArticleButton.Location = new System.Drawing.Point(229, 358);
             this.addArticleButton.Name = "addArticleButton";
-            this.addArticleButton.Size = new System.Drawing.Size(114, 46);
+            this.addArticleButton.Size = new System.Drawing.Size(114, 54);
             this.addArticleButton.TabIndex = 2;
             this.addArticleButton.Text = "Add article";
             this.addArticleButton.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@ namespace ScienceWorld.Forms
             // 
             this.deleteArticleButton.Location = new System.Drawing.Point(414, 358);
             this.deleteArticleButton.Name = "deleteArticleButton";
-            this.deleteArticleButton.Size = new System.Drawing.Size(114, 46);
+            this.deleteArticleButton.Size = new System.Drawing.Size(114, 54);
             this.deleteArticleButton.TabIndex = 3;
             this.deleteArticleButton.Text = "Delete article";
             this.deleteArticleButton.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@ namespace ScienceWorld.Forms
             // 
             this.otherArticlesButton.Location = new System.Drawing.Point(585, 358);
             this.otherArticlesButton.Name = "otherArticlesButton";
-            this.otherArticlesButton.Size = new System.Drawing.Size(114, 46);
+            this.otherArticlesButton.Size = new System.Drawing.Size(114, 54);
             this.otherArticlesButton.TabIndex = 4;
             this.otherArticlesButton.Text = "Other Articles";
             this.otherArticlesButton.UseVisualStyleBackColor = true;

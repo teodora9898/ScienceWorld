@@ -39,9 +39,9 @@ namespace ScienceWorld.Forms
         {
             titleComboBox.Items.Clear();
             var articles = ArticleQueries.GetArticleByScienceField(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString());
-            foreach(Article art in articles)
+            foreach (Article art in articles)
             {
-                    titleComboBox.Items.Add(art.title);
+                titleComboBox.Items.Add(art.title);
             }
         }
 

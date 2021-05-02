@@ -1,10 +1,5 @@
 ﻿using ScienceWorld.Queries;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ScienceWorld.Forms
@@ -44,16 +39,16 @@ namespace ScienceWorld.Forms
                         allCommentsListBox.Items.Add(item.text);
                     }
                 }
-                
+
             }
 
         }
 
         private void addCommentButton_Click(object sender, EventArgs e)
-        { 
+        {
             if (String.IsNullOrEmpty(myCommentTextBox.Text.ToString()))
             {
-                MessageBox.Show("Please write your comment in textbox!"); 
+                MessageBox.Show("Please write your comment in textbox!");
             }
             else
             {
@@ -100,7 +95,6 @@ namespace ScienceWorld.Forms
 
         private void CommentForm_Load(object sender, EventArgs e)
         {
-            //ovo treba prepraviti za article
             var comments = CommentQueries.GetAllComments();
             foreach (var item in comments)
             {
