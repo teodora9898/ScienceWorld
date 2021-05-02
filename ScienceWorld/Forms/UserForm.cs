@@ -18,7 +18,7 @@ namespace ScienceWorld.Forms
 
         private void updatePasswordButton_Click(object sender, EventArgs e)
         {
-            //UserQueries.UpdatePassword(newPasswordTextBox.Text);
+            UserQueries.UpdatePassword(newPasswordTextBox.Text);
         }
 
         private void deleteAccountButton_Click(object sender, EventArgs e)

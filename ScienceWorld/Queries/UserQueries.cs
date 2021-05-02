@@ -81,17 +81,20 @@ namespace ScienceWorld.Queries
         //todo Teodora : probaj preko batch?
         public static void UpdatePassword(string newPassword)
         {
-            /*ISession session = SessionManager.GetSession();
+            ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            var user = session.Execute("update \"User\" " +
-                "set password = '"+newPassword+"'"+
-                "where username='" + Global.ActiveUser.username + "'" +
-                "and password='"+Global.ActiveUser.password+"'"+
-                "if exists");*/
-           //todo Teodora : Ne moze da se updateuje deo primarnog kljuca a password nije dobar kandidat za sekundarni indeks
+            var activeUser = Global.ActiveUser;
+
+            session.Execute("delete from \"User\" where username = '" + Global.ActiveUser.username + "'and password ='" + Global.ActiveUser.password + "'");
+            RowSet userData = session.Execute("insert into \"User\" (username, password, firstname, lastname," +
+               " email, description, birthday, town)  values " +
+               "('" + activeUser.username + "', '" + newPassword + "', '" + activeUser.name + "', '"
+               + activeUser.surname + "', '" + activeUser.email + "', '" + activeUser.description + "', '" + activeUser.birthday + "', '" + activeUser.town + "')");
+
+            activeUser.password = newPassword;
 
         }
 
