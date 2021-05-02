@@ -73,7 +73,7 @@ namespace ScienceWorld.Queries
             if (session == null)
                 return null;
 
-            var articleData = session.Execute("select * from \"article\" where username='" + username + "' and fieldofscience='" + field + "'").ToList();
+            var articleData = session.Execute("select * from \"article\" where username='" + username + "' and fieldofscience='" + field + "'and title='" + title + "'").ToList();
             foreach (var art in articleData)
             {
                 Article article = new Article();

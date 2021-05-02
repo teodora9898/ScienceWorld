@@ -24,6 +24,7 @@ namespace ScienceWorld.Forms
         private void fieldComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             createrComboBox.Items.Clear();
+            titleComboBox.Items.Clear();
             var articles = ArticleQueries.GetArticleByOnlyScienceField(fieldComboBox.SelectedItem.ToString());
             foreach (Article art in articles)
             {
@@ -46,6 +47,7 @@ namespace ScienceWorld.Forms
 
         private void showArticleButton_Click(object sender, EventArgs e)
         {
+            otherArticlesListBox.Items.Clear();
             if (titleComboBox.SelectedIndex > -1)
             {
                 var articles = ArticleQueries.GetArticleByScienceFieldAndTitle(createrComboBox.SelectedItem.ToString(), fieldComboBox.SelectedItem.ToString(), titleComboBox.SelectedItem.ToString());
